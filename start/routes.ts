@@ -19,7 +19,17 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import Database from '@ioc:Adonis/Lucid/Database'
 
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
+})
+
+Route.get('/contact', 'PostsController.index')
+Route.get('/home', async ({ view }) => {
+  return view.render('home')
+})
+
+Route.get('/posts', async ({ view }) => {
+  return view.render('posts', { posts: await Database.from('posts').select('*') })
 })

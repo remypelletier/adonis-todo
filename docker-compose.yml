@@ -5,10 +5,10 @@ services:
     image: mysql:latest
     container_name: adonis_sql_container
     environment:
-      MYSQL_ROOT_PASSWORD: root # Changez cela en fonction de vos besoins
-      MYSQL_DATABASE: adonis_todos
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # Changez cela en fonction de vos besoins
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - '3310:3306'
     volumes:

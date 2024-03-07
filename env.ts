@@ -30,3 +30,30 @@ export default Env.rules({
   MYSQL_PASSWORD: Env.schema.string.optional(),
   MYSQL_DB_NAME: Env.schema.string(),
 })
+
+/*
+CREATE TABLE users (
+  id INT PRIMARY KEY,
+  firstName VARCHAR(50),
+  lastName VARCHAR(50)
+);
+
+CREATE TABLE todos (
+  id INT PRIMARY KEY,
+  label VARCHAR(256),
+  description VAR CHAR(256)
+);
+
+CREATE TABLE tags (
+  id INT PRIMARY KEY,
+  label VARCHAR(50),
+);
+
+CREATE TABLE haveTags (
+  user_id INT,
+  tag_id INT,
+  PRIMARY KEY (user_id, tag_id),
+  FOREIGN KEY (user_id) REFERENCES users (id),
+  FOREIGN KEY (tag_id) REFERENCES tags (id)
+);
+*/
